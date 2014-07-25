@@ -1,0 +1,5 @@
+<h1> All Of Your Outfits </h1>
+<% @all_outfits.each do |outfit| %>
+  <%= image_tag outfit.file_name%>
+  <p><%= outfit.date_time.getlocal %> </p>
+<% end %>
