@@ -11,46 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725175020) do
+ActiveRecord::Schema.define(version: 20140725172646) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "contacts_groups", id: false, force: true do |t|
-    t.integer "contact_id"
-    t.integer "group_id"
-  end
-
-  create_table "contacts_outfits", id: false, force: true do |t|
-    t.integer "contact_id"
-    t.integer "outfit_id"
-  end
-
-  create_table "groups", force: true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "groups_outfits", id: false, force: true do |t|
-    t.integer "groups_id"
-    t.integer "outfit_id"
   end
 
   create_table "outfits", force: true do |t|
-    t.integer  "user_id"
     t.string   "filename"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.text     "username"
+    t.datetime "date_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
