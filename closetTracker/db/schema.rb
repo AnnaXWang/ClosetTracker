@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140725172646) do
   end
 
   create_table "outfits", force: true do |t|
+    t.integer  "contact_id"
     t.string   "filename"
     t.datetime "date_time"
     t.datetime "created_at"

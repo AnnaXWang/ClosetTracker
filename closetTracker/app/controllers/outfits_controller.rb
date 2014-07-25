@@ -5,7 +5,7 @@ class OutfitsController < ApplicationController
   end
   def create
     if params[:outfit]
-      @new_outfit = Outfit.new(:date_time => DateTime.now, :file_name => params[:outfit][:uploaded_outfit].original_filename)
+      @new_outfit = Outfit.new(:date_time => DateTime.now, :filename => params[:outfit][:uploaded_outfit].original_filename)
       if @new_outfit.save
         @new_outfit.create_outfit(params[:outfit][:uploaded_outfit]) 
       else

@@ -1,7 +1,7 @@
 ClosetTracker::Application.routes.draw do
-  resources :contacts, only :index do
-    resources :outfits do
-    end
+  resources :contacts , only: [:index, :create, :new, :show] do
+  end
+  resources :outfits, only: [:new, :create, :index] do
   end
   root 'contacts#index'
   
