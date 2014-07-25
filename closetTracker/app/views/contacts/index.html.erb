@@ -1,0 +1,8 @@
+<h1>Your Contacts</h1>
+<table>
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.name%></td>
+    </tr>
+  <% end %>
+</table>
