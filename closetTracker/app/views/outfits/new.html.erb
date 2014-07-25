@@ -1,0 +1,8 @@
+<%= form_for(@outfit) do |form| %>
+	<p> Select a file to upload </p>
+	<%= form.file_field(:uploaded_outfit) %>
+	<%= form.submit %>
+	<p> or </p>
+	<p> Take a picture from your phone </p>
+	<input type="file" accept="image/*" capture="camera">
+<% end %>
