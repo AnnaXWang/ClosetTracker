@@ -1,7 +1,7 @@
 class OutfitsController < ApplicationController
   def new
     @title = "Upload A New Outfit"
-	@outfit = Outfit.new
+	  @outfit = Outfit.new
   end
   def create
     if params[:outfit]
