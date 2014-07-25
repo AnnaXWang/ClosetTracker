@@ -1,5 +1,5 @@
 class Outfit < ActiveRecord::Base
-  belongs_to :contact
+  has_and_belongs_to_many :contacts
   default_scope order: 'created_at DESC'
   def create_outfit new_outfit
   	File.open(Rails.root.join('app', 'assets', 'images', new_outfit.original_filename), 'wb') do |file|

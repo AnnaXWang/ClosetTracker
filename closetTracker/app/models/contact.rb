@@ -1,3 +1,3 @@
 class Contact < ActiveRecord::Base
-  has_many :outfits
+  has_and_belongs_to_many :outfits
 end
