@@ -6,5 +6,5 @@ class Outfit < ActiveRecord::Base
   	  file.write(new_outfit.read)
     end
   end
-  validates :file_name, presence:true
+  validates :filename, presence:true
 end

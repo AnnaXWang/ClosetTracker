@@ -19,10 +19,13 @@ ActiveRecord::Schema.define(version: 20140725212748) do
     t.datetime "updated_at"
   end
 
-  create_table "contacts_outfits", force: true do |t|
+  create_table "contacts_outfits", id: false, force: true do |t|
     t.integer "contact_id"
     t.integer "outfit_id"
   end
+
+  add_index "contacts_outfits", ["contact_id", "outfit_id"], name: "index_contacts_outfits_on_contact_id_and_outfit_id"
+  add_index "contacts_outfits", ["outfit_id", "contact_id"], name: "index_contacts_outfits_on_outfit_id_and_contact_id"
 
   create_table "outfits", force: true do |t|
     t.string   "filename"

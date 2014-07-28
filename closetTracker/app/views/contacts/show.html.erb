@@ -1,7 +1,11 @@
-<h1><%= @contact.name %></h1>
+<div class = 'main-header'>
+  <h1 class = 'main-header no-search'><%= @contact.name %>
+    <div class = "btn add-new-btn"><%= link_to 'NEW OUTFIT', new_outfit_path %></div>
+  </h1>
+</div>
 <% @contact.outfits.each do |outfit| %>
-  <div>
-    <%= image_tag outfit.file_name %>
-    <%= outfit.date_time.getlocal %>
-  </div>
+	<div class = "outfit-photo">
+	  <%= image_tag outfit.filename %>
+	  <p><%= outfit.date_time.getlocal %></p>
+	</div>
 <% end %>

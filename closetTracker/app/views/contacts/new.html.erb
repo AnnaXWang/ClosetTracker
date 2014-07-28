@@ -1,9 +1,13 @@
+<div class = 'main-header'>
+  <h1 class = 'main-header no-search'> New Contact
+  </h1>
+</div>
 <%= form_for(@contact) do |form| %>
   <table class="form">
     <tr>
-	  <td class="label">Contact's Name:</td>
+	  <td>Contact's Name:</td>
  	  <td><%= form.text_field(:name) %></td>
+ 	  <td><%= form.submit %></td>
     </tr>
   </table>
-  <%= form.submit %>
 <% end %>
