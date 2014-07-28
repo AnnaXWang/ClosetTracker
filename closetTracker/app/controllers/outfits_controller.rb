@@ -1,22 +1,28 @@
 class OutfitsController < ApplicationController
   def new
     @title = "Upload A New Outfit"
-	  @outfit = Outfit.new
+    @outfit = Outfit.new
+    @contacts = Contact.all
+    @names = []
+    Contact.all.each do |c|
+      @names << [c.name, c.id]
+    end 
   end
   def create
-    if params[:outfit]
-      @new_outfit = Outfit.new(:date_time => DateTime.now, :filename => params[:outfit][:uploaded_outfit].original_filename)
-      if @new_outfit.save
-        @new_outfit.create_outfit(params[:outfit][:uploaded_outfit]) 
-      else
-     	render :controller => :outfits, :action => :new
-      end	
+    @new_outfit = Outfit.new(:date_time => DateTime.now, :filename => params[:uploaded_outfit])
+    @new_outfit.contacts << Contact.find(params[:contact_id])
+    if @new_outfit.save
+      redirect_to outfits_path
     else
-      render :controller => :outfits, :action => :new
-  	end
+   	render :controller => :outfits, :action => :new
+    end	
   end
-  def show
+  def index
   	@all_outfits = Outfit.all
   	@title = "All Your Outfits"
+  end
+  private
+  def outfit_params
+    params.require(:outfit).permit(:date_time, :filename, :contact_ids => [])
   end
 end
