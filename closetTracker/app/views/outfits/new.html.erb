@@ -7,7 +7,4 @@
 	<p><%= file_field_tag (:uploaded_outfit) %></p>
 	<p><%= select_tag(:contact_id, options_for_select(@names)) %></p>
 	<p><%= submit_tag 'Submit'%></p>
-	<p> or </p>
-	<p> Take a picture from your phone </p>
-	<input type="file" accept="image/*" capture="camera">
 <% end %>

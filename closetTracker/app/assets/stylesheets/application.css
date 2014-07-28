@@ -133,7 +133,7 @@ a, div, td{
 	color: #e5d6da;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
 		color: #ecf0f1;
 	}
