@@ -1,10 +1,8 @@
 <div class = 'main-header'>
-  <h1 class = 'main-header no-search'><%= @contact.name %>
-    <div class = "btn add-new-btn"><%= link_to 'NEW OUTFIT', new_outfit_path %></div>
-  </h1>
+  <h1 class = 'main-header no-search'>Outfits - <%= @contact.name %><span class = 'btn pull-right add-button'><%= link_to '+', new_outfit_path %></span></h1>
 </div>
 <% @contact.outfits.each do |outfit| %>
-	<div class = "outfit-photo">
+	<div class = 'outfit-photo'>
 	  <%= image_tag outfit.filename %>
 	  <p><%= outfit.date_time.getlocal %></p>
 	</div>

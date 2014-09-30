@@ -1,12 +1,10 @@
 <div class = 'main-header'>
-  <h1 class = 'main-header no-search'> All Of Your Outfits
-  <div class = "btn add-new-btn"><%= link_to 'NEW OUTFIT', new_outfit_path %></div>
-  </h1>
+  <h1 class = 'main-header no-search'> All Of Your Outfits<span class = 'btn pull-right add-button'><%= link_to '+', new_outfit_path %></span></h1>
 </div>
 <% if @all_outfits %> 
   <% @all_outfits.each do |outfit| %>
-    <div class = "outfit-photo">
-      <%= image_tag outfit.filename%>
+    <div class = 'outfit-photo'>
+      <%= image_tag outfit.photo.url(:small) %>
       <p><%= outfit.date_time.getlocal %> </p>
     </div>
   <% end %>

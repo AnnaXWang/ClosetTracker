@@ -1,5 +1,13 @@
-a, div, td{
-	font-family: Papyrus, fantasy;
+a, div, td, {
+	font-family: Montserrat,"Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:hover{
+	color: gray;
+	text-decoration: none;
 }
 .add-button{
 	font-size: 30px;
@@ -23,12 +31,8 @@ a, div, td{
 .main-header{
 	text-align: center;
 	position: relative;
-	font-family: Papyrus, fantasy;
 }
 .add-new-btn{
-	top: 32px;
-	right: 0px;
-	position: absolute;
 	border: 2px solid black;
 	border-radius: 4px;
 	padding: 6px;
@@ -41,7 +45,7 @@ a, div, td{
 .search-bar{
 	padding-top: 60px;
 	position: relative;
-	background-image: -webkit-linear-gradient(top, #810f00, #BB1907);
+	background-image: -webkit-linear-gradient(top, #000, #000);
 	padding-bottom: 10px;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -50,7 +54,6 @@ a, div, td{
 	padding-left: 10px;
 	background-color: #dfdfdf;
 	font-size: 20px;
-	font-family: Papyrus, fantasy;
 }
 .index-table{
 	width:100%;
@@ -67,28 +70,28 @@ a, div, td{
 .glyphicon-chevron-right{
 	margin-right: 10px;
 	padding-top: 2px;
-	color: #810f00;
+	color: #000;
 }
 .contact-search{
 	width: 100%;
 	padding-left: 35px;
 	height: 40px;
-	border: 1px solid #999999; 
+	border: 1px solid #000; 
 	border-radius: 4px;
 }
 .body{
 	background-color: #FBCEB1;
 }
 .navbar-btn{
-	background-image: -webkit-linear-gradient(top, #810f00, #BB1907);
+	background-image: -webkit-linear-gradient(top, #000, #000);
 	color: white;
 	border: 1px gray solid;
 	padding: 5px;
 	border-radius: 4px;
 }
 .navbar-default {
-	background-image: -webkit-linear-gradient(top, #810f00, #BB1907);
-	border-color: #810f00;
+	background-image: -webkit-linear-gradient(top, #000, #000);
+	border-color: #000;
 }
 .navbar-default .navbar-brand {
 	color: #ecf0f1;

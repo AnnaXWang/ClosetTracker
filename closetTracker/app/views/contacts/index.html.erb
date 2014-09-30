@@ -1,16 +1,23 @@
-<div class = "search-bar">
-	<input class = 'contact-search' type="text" id="search" placeholder= 'Search For A Contact'>
-	    <span class="glyphicon glyphicon-search "></span>
+<div class = 'search-bar'>
+	<input class = 'contact-search' type= 'text' id= 'search' placeholder= 'Search For A Contact'>
+	    <span class='glyphicon glyphicon-search'></span>
 	</input>
 </div>
-<h1 class = 'main-header'> Contacts <span class = "btn pull-right add-button"><%= link_to '+', new_contact_path %></span></h1>
-<table class = 'index-table'>
+<h1 class = 'main-header'> Contacts <span class = 'btn pull-right add-button'><%= link_to '+', new_contact_path %></span></h1>
+<table id = 'all-contact-index-table'>
 	<% @contacts.each do |contact| %>
 		<tr class = 'index-row'>
-		    <td class = 'contact-index'><%= link_to contact.name, contact_path(contact) %><span class = "glyphicon glyphicon-chevron-right pull-right"></span>
+		    <td class = 'contact-index'><%= link_to contact.name, contact_path(contact) %><span class = 'glyphicon glyphicon-chevron-right pull-right'></span>
 			</td>
 		</tr>
 	<% end %>
 </table>
+<table id = 'search-index-table'></table>
+
+<script type='text/javascript'>
+    //<![CDATA[
+    new FindContacts('search', 'all-contact-index-table', 'search-index-table');
+    //]]>
+</script>
 
 

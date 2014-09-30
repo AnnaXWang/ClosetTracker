@@ -1,9 +1,14 @@
 ClosetTracker::Application.routes.draw do
   resources :contacts , only: [:index, :create, :new, :show] do
+    collection do
+      get 'search'
+    end
   end
-  resources :outfits, only: [:new, :create, :index] do
+  resources :outfits do
   end
-  root 'contacts#index'
+  resources :start, only: :show do
+  end
+  root 'start#show'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

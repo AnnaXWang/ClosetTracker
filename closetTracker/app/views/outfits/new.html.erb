@@ -2,9 +2,16 @@
   <h1 class = 'main-header no-search'> Upload An Outfit
   </h1>
 </div>
-<%= form_tag outfits_path do %>
-	<p> Select a file to upload </p>
-	<p><%= file_field_tag (:uploaded_outfit) %></p>
-	<p><%= select_tag(:contact_id, options_for_select(@names)) %></p>
-	<p><%= submit_tag 'Submit'%></p>
+<%= form_for Outfit.new, :html => { :multipart => true} do |f| %>
+  <div class="field">
+    <%= f.label 'Choose a Photo' %><br>
+    <%= f.file_field :photo %>
+    <%  @contacts.each do |c|  %>
+  		<%= f.label c.name  %>
+  		<%= check_box_tag "contacts[]", c.id %>
+  	<% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
