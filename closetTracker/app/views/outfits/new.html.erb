@@ -1,16 +1,18 @@
 <div class = 'main-header'>
   <h1 class = 'main-header no-search'> Upload An Outfit </h1>
 </div>
-<%= form_for Outfit.new, :html => { :multipart => true} do |f| %>
-  <div class="field">
-    <%= f.label 'Choose a Photo' %><br>
-    <%= f.file_field :photo %>
-    <%  @contacts.each do |c|  %>
-  		<%= f.label c.name  %>
-  		<%= check_box_tag "contacts[]", c.id %>
-  	<% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class = 'form-div'>
+  <%= form_for Outfit.new, :html => { :multipart => true} do |f| %>
+    <div class="field">
+      <%= f.label 'Choose a Photo' %><br>
+      <%= f.file_field :photo %>
+      <%  @contacts.each do |c|  %>
+    		<%= f.label c.name  %>
+    		<%= check_box_tag "contacts[]", c.id %>
+    	<% end %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
