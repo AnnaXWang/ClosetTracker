@@ -23,7 +23,6 @@ function FindContacts(searchID,allContactsID,resultsID) {
 FindContacts.prototype.keyUp = function(event){
 	var text = this.search.value;
 	if(text == '' || null){
-		this.originalContacts.style.display = 'block';
 		this.result.innerHTML = '';
 		return;
 	}
