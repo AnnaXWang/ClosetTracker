@@ -6,4 +6,5 @@ class Contact < ActiveRecord::Base
   		return true
   	end
   end
+  validates :name, presence:true
 end
